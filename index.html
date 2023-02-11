@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BS_Portfolio</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="logo">BS</a>
+        <div class="navlink">
+            <ul>
+                <li class="on"> <a>Acceuil</a></li>
+                <a href="competence.html"><li class="off">Compétences</li></a>
+                <a href="project.html"> <li class ="off"> Réalisation</li></a>
+                <a href="Contact.html"><li class ="off"> Contact</li></a>
+            </ul>
+        </div>
+        <img  class="menu" src="img/icon_menu.png" alt="Menu du site">
+    </nav>
+    <div class="bt_credit">
+        <img src="img/icon_piece.png">
+    </div>
+    <div class="pres">
+        <div class="intro">
+            <h1>Ba Souleymane</h1>
+            <h2>Etudiant en Licence Informatique</h2>
+        </div>
+        <img class="perso" src="img/sit_planet.png" >
+    </div>
+    <div class="credits">
+        <div class="credit">
+            <button id="close_cr">X</button>
+            <h1>Source des images utilisées</h1>
+            <div class="cred_list">
+                <span>Image d'une planète</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/objets-jeu-interface-utilisateur-asteroides-dessin-anime-planetes-extraterrestres_26508608.htm#page=2&query=planete&position=43&from_view=search&track=sph%22%3E">
+                    <img src="img/planetes.jpg">
+                </a> sur Freepik
+            </div>
+            <div class="cred_list">
+                <span>Image d'un background</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/planetes-dans-espace-satellites-meteores-illustration_6690897.htm#query=space&position=4&from_view=search&track=sph%22%3E">
+                    <img src="space_shooter/img/back.jpg">
+                </a> sur Freepik
+            </div>
+            <div class="cred_list">
+                <span>Image d'un astronaute</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/astronaute-mignon-boite-cartoon-vector-icon-illustration-icone-technologie-scientifique_10411727.htm#query=astronaute%20mignon&position=9&from_view=keyword">
+                    <img src="img/teteastro.png">
+                </a> sur Freepik
+            </div>
+            <div class="cred_list">
+                <span>Image d'un astronaute</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/astronaute-mignon-mangeant-beignet-tenant-tasse-cafe-caricature-lune_11919365.htm?query=astronaute assis">
+                    <img src="img/sit_planet.png">
+                </a> sur Freepik
+            </div>
+            <div class="cred_list">
+                <span>Image des vaisseaux</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/vaisseaux-spatiaux-fusees-ovni-planetes-asteroides-isoles-ensemble-icones-dessin-anime-collection_13429019.htm#query=vaisseau&position=48&from_view=search&track=sph">
+                    <img src="img/vaisseaux.jpg">
+                </a> sur Freepik
+            </div>
+            <div class="cred_list">
+                <span>Image des vaisseaux</span>
+                <a href="https://fr.freepik.com/vecteurs-libre/vaisseaux-spatiaux-fusees-ovni-planetes-asteroides-isoles-ensemble-icones-dessin-anime-collection_13429019.htm#query=vaisseau&position=48&from_view=search&track=sph">
+                    <img src="img/vaisseaux.jpg">
+                </a> sur Freepik
+            </div>
+        </div>
+    </div> 
+    
+</body>
+<script>
+        const menu = document.querySelector(".menu")
+        const navLinks = document.querySelector(".navlink")
+        const cl_cr = document.getElementById("close_cr");
+        const credit = document.querySelector(".credits");
+        const bt_cred = document.querySelector('.bt_credit');
+        menu.addEventListener('click',()=>{
+            navLinks.classList.toggle('mobile-menu')
+            var div = document.getElementsByClassName('mobile-menu').length > 0;
+            const pres = document.querySelector('.pres');
+            if(div){
+                pres.style.display = 'none'
+            }else{
+                pres.style.display = 'flex'
+            }
+        });
+
+        cl_cr.addEventListener('click',()=>{
+            credit.style.display = 'none';
+            bt_cred.style.display ='flex';
+        });
+
+        bt_cred.addEventListener('click',()=>{
+            credit.style.display = 'flex';
+            bt_cred.style.display ='none';
+            
+        });
+
+        document.documentElement.style.overflow = 'hidden';
+        
+</script>
+</html>
