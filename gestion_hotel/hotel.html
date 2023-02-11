@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>BS_Portfolio</title>
+</head>
+
+<body>
+
+    <a href="../project.html"><button id="back">Retour</button></a>
+    <div class="cadre">
+        <div class="liste">
+            <div class="list">
+                <span>Liste des hôtels</span>
+                <div class="lh" id="ht_div">
+                </div>
+            </div>
+            <div class="list">
+                <span>Liste des chambres</span>
+                <div class="lh" id="ch_div">
+                </div>
+
+            </div>
+        </div>
+        <div class="add">
+            <div id="switch_b">
+                <button class="tab " onclick="openTab(event,'hotel')">Hôtel</button>
+                <button class="tab " onclick="openTab(event,'chambre')">Chambre</button>
+            </div>
+            <div class="add_b" id="hotel">
+                <div class="info">
+                    <label>Nom de l'hôtel:</label>
+                    <input id="ht_txt" type="text">
+                </div>
+                <div class="info">
+                    <label>Nombre d'étoile:</label>
+                    <select id="star">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <fieldset class="info">
+                    <legend>Option</legend>
+                    <div>
+                        <input type="checkbox" id="piscine" name="option" value="piscine">
+                        <label for="piscine">Piscine</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="restaurant" name="option" value="restaurant">
+                        <label for="restaurant">Restaurant</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="parking" name="option" value="parking">
+                        <label for="parking">Parking</label>
+                    </div>
+                </fieldset>
+
+                <button onclick="addHotel()">Ajouter</button>
+
+
+            </div>
+            <div class="add_b" id="chambre">
+                <div class="info">
+                    <label>Hôtel:</label>
+                    <select id="opht">
+                    </select>
+                </div>
+                <div class="info">
+                    <label>Numéro de chambre:</label>
+                    <input id="ch_txt" type="text">
+                </div>
+                <div class="info">
+                    <label>Chambre pour:</label>
+                    <select id="perso">
+                        <option value="1">1 personne</option>
+                        <option value="2">2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                    </select>
+                </div>
+
+                <fieldset class="info">
+                    <legend>Option</legend>
+                    <div>
+                        <input type="checkbox" id="douche" name="option" value="douche">
+                        <label for="douche">Douche</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mini-bar" name="option" value="mini-bar">
+                        <label for="mini-bar">Mini-Bar</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="télé" name="option" value="télé">
+                        <label for="télé">Télévision</label>
+                    </div>
+                </fieldset>
+
+                <button onclick="addChambre()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // window.addEventListener("scroll", function (e) {
+        //     window.scrollTo(0, 0);
+        // }, false);
+        //document.documentElement.style.overflow = 'hidden';
+        const optH = document.getElementById("opht");
+        const ht_d = document.getElementById("ht_div");
+        const ch_d = document.getElementById("ch_div");
+
+        function openTab(evnt, name) {
+            const tab = document.getElementsByClassName("tab");
+            const add = document.getElementsByClassName("add_b");
+
+            for (let i = 0; i < add.length; i++) {
+                add[i].style.display = "none";
+            }
+            for (let i = 0; i < tab.length; i++) {
+                tab[i].classList.remove("active");
+            }
+            document.getElementById(name).style.display = "flex";
+            evnt.currentTarget.className += " active";
+        }
+
+        var list_ht = [];
+
+        function addOptionHotel(list, hotel) {
+            const opt = document.createElement("option");
+            opt.value = hotel.nom;
+            opt.text = hotel.nom;
+            optH.add(opt, optH.options[optH.selectedOptions.length]);
+        }
+        function addHotel() {
+            let ht_txt = document.getElementById("ht_txt").value;
+            let star = document.getElementById("star");
+            let value = star.value;
+            let pisc = document.getElementById("piscine").checked;
+            let resto = document.getElementById("restaurant").checked;
+            let parking = document.getElementById("parking").checked;
+            if (ht_txt == "" || ht_txt == " ") { alert("Un nom d'hôtel doit être donné"); return; }
+
+            console.log(ht_txt)
+            let ht = {
+                nom: ht_txt,
+                star: value,
+                option: [pisc, resto, parking],
+                list: []
+            };
+            const checkname = list => list.nom === ht_txt;
+            if (list_ht.some(checkname) == false) {
+                list_ht.push(ht);
+                addOptionHotel(list_ht, ht);
+                divHotel(ht);
+            } else {
+                alert("Cet hôtel existe déjà!")
+            }
+        }
+
+        function addChambre() {
+            let ht_v = optH.value;
+            let n_cham = document.getElementById("ch_txt").value;
+            let capacity = document.getElementById("perso");
+            let douch = document.getElementById("douche").checked;
+            let mini = document.getElementById("mini-bar").checked;
+            let tv = document.getElementById("télé").checked;
+
+            if (ht_v == "" || n_cham == "") { alert("Vous avez oublié quelque chose!"); return; }
+
+            let ch = {
+                num: n_cham,
+                cap: capacity.value,
+                option: [douch, mini, tv]
+            };
+
+            const checkname = list => list.num === n_cham;
+
+            for (let i = 0; i < list_ht.length; i++) {
+                if (list_ht[i].nom == ht_v) {
+                    if (list_ht[i].list.some(checkname) == true) {
+                        alert("Cette chambre existe déjà!");
+                        return;
+                    }
+                    list_ht[i].list.push(ch)
+                    seeChambre(list_ht[i])
+                }
+            }
+
+            
+
+        }
+
+        function divHotel(ht) {
+            const info = document.createElement("div");
+            info.classList.add("info");
+            info.setAttribute("id", ht.nom);
+            ht_d.appendChild(info);
+            const sp = document.createElement("span");
+            sp.innerText = ht.nom;
+            info.appendChild(sp);
+            const icon1 = document.createElement("div");
+            icon1.setAttribute("id", "icon");
+            const icon2 = document.createElement("div");
+            icon2.setAttribute("id", "icon");
+            for (let i = 0; i < ht.option.length; i++) {
+                var tab_opt = ["icon_nage", "icon_resto", "icon_parking"]
+                if (ht.option[i] == true) {
+                    const img = document.createElement("img");
+                    img.src = "/img/" + tab_opt[i] + ".png";
+                    icon1.appendChild(img)
+                }
+
+            }
+            for (let i = 0; i < parseInt(ht.star); i++) {
+                const img = document.createElement("img");
+                img.src = "/img/icon_etoile.png";
+                icon2.appendChild(img)
+            }
+            const close = document.createElement("img");
+            close.src = "/img/icon_close.png";
+            close.setAttribute('id',"close");
+            info.appendChild(icon1);
+            info.appendChild(icon2);
+            info.appendChild(close);
+
+            info.addEventListener("click", function (event) {
+                seeChambre(ht)
+            });
+            close.addEventListener("click", function(e){
+                const verifname = element => element.nom === ht.nom;
+                list_ht.splice(list_ht.indexOf(verifname),1);
+                info.remove();
+            });
+        }
+
+        function seeChambre(ht) {
+            ch_d.innerHTML = "";
+            for (let i = 0; i < ht.list.length; i++) {
+                const info = document.createElement("div");
+                info.style.cursor = "default";
+                info.classList.add("info");
+                info.setAttribute("id", ht.list[i].num);
+                ch_d.appendChild(info);
+                const sp = document.createElement("span");
+                sp.innerText = "Numéro:" + ht.list[i].num;
+                info.appendChild(sp);
+                const h4 = document.createElement("h4");
+                h4.innerText = "Capacité: " + ht.list[i].cap;
+                info.appendChild(h4);
+                const icon = document.createElement("div");
+                icon.setAttribute("id", "icon");
+                for (let j = 0; j < ht.list[i].option.length; j++) {
+                    var tab_opt = ["icon_douche", "icon_bar", "icon_tv"]
+                    if (ht.list[i].option[j] == true) {
+                        const img = document.createElement("img");
+                        img.src = "/img/" + tab_opt[j] + ".png";
+                        icon.appendChild(img)
+                    }
+                }
+                const close = document.createElement("img");
+                close.src = "/img/icon_close.png";
+                close.setAttribute('id',"close");
+                info.appendChild(icon);
+                info.appendChild(close);
+                close.addEventListener("click", function(e){
+                    ht.list.splice(i,1);
+                    seeChambre(ht);
+                });
+            }
+
+        }
+
+
+
+
+    </script>
+</body>

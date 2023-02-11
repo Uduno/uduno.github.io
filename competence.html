@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BS_Portfolio</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="index.html" class="logo">BS</a>
+        <div class="navlink">
+            <ul>
+                <a href="index.html"><li class="off">Acceuil</li></a>
+               <li class="on"> <a>Compétences</a></li>
+                <a href="project.html"> <li class ="off">Réalisation </li></a>
+                <a href="Contact.html"><li class ="off"> Contact</li></a>
+            </ul>
+        </div>
+        <img class="menu" src="img/icon_menu.png" alt="Menu du site">
+    </nav>
+
+    <div class="card_slide">
+        <div class="card prev">
+            <div class="pres">
+                <h1>Programmation Orienté Objet</h1>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="card active">
+            <div class="pres">
+                <h1>Web</h1>
+                <ul>
+                    <li>Javascript</li>
+                    <li>Php</li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="card next">
+            <div class="pres">
+                <h1>Impératif</h1>
+                <ul>
+                    <li>C</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="card"></div>
+        <div class="button_cont">
+            <div class="button"><span>&#60;</span> </div>
+            <div class="button"> <span>&#62;</span></div>
+        </div>
+        <img src="img/teteastro.png" id="tete">
+    </div>
+
+</body>
+<script>
+    const menu = document.querySelector(".menu")
+    const navLinks = document.querySelector(".navlink")
+
+    menu.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu')
+        var div = document.getElementsByClassName('mobile-menu').length > 0;
+
+    })
+    const slider = document.querySelector(".card_slide");
+    const slides = document.querySelectorAll(".card");
+    const button = document.querySelectorAll(".button");
+
+    let current = 1;
+    let prev = 0;
+    let next = 2;
+
+
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+    }
+
+    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 2);
+
+    const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
+    const gotoNum = number => {
+        current = number;
+        prev = current - 1;
+        next = current + 1;
+
+        for (let i = 0; i < slides.length-1; i++) {
+            slides[i].classList.remove("active");
+            slides[i].classList.remove("prev");
+            slides[i].classList.remove("next");
+        }
+
+        if (next == 3) {
+            next = 0;
+        }
+
+        if (prev == -1) {
+            prev = 2;
+        }
+
+        slides[current].classList.add("active");
+        slides[prev].classList.add("prev");
+        slides[next].classList.add("next");
+    }
+
+
+
+</script>
+
+</html>
