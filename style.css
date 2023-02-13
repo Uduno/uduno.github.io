@@ -725,6 +725,22 @@ nav .navlink ul li.off:hover {
     .case {
         flex-basis: 50%;
     }
+
+    .mail_send{
+        width: 90%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto ;
+        left: 0;
+        margin-top: 10%;
+        border-radius: 20px;
+        border-bottom: solid 5px #ca7ceea2;
+
+    }
+
+    .mail_send .mail_form textarea{
+        height: 100%;
+    }
 }
 
 
@@ -754,12 +770,26 @@ nav .navlink ul li.off:hover {
     .card_slide .card:nth-child(4) {
         transform: scale(0.8);
     }
+
+    
 }
 
 @media screen and (max-height: 500px) {
     .pres .perso {
         width: 15%;
         height: 60%;
+    }
+
+    .mail_send{
+        margin-top: 1px;
+        padding-bottom: 25px;
+    }
+    .mail_send .button{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    .mail_send .mail_form textarea{
+        height: 30px;
     }
 }
 
