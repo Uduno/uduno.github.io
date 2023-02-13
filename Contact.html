@@ -30,17 +30,16 @@
     </nav>
     <div class="mail_send">
         <h2>Me contacter</h2>
-        <form class="mail_form" action="#">
-            <input class="name" type="text" placeholder="Nom...">
-            <input class="email" type="email" placeholder="Email...">
-            <input class="obj" type="text" placeholder="Objet...">
-            <textarea class="msg" cols="5" rows="5" placeholder="Message..."></textarea>
+        <form class="mail_form" action="https://formspree.io/f/xrgvprzq" method="POST">
+            <input class="name" type="text" name="Name" placeholder="Nom...">
+            <input class="email" type="email" name="Email" placeholder="Email...">
+            <input class="obj" type="text" name="Objet" placeholder="Objet...">
+            <textarea class="msg"  name="Message" cols="5" rows="5" placeholder="Message..."></textarea>
             <button type="submit">Envoyer</button>
         </form>
     </div>
 
 </body>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
     const menu = document.querySelector(".menu")
     const navLinks = document.querySelector(".navlink")
@@ -56,24 +55,26 @@
     });
 
     const frm = document.querySelector('.mail_form');
-    function sendEmail(e) {
-        e.preventDefault();
-        const name = document.querySelector('.name'),
-            email = document.querySelector('.email'),
-            obj = document.querySelector('.obj'),
-            msg = document.querySelector('.msg');
+    // function sendEmail(e) {
+    //     e.preventDefault();
+    //     const name = document.querySelector('.name'),
+    //         email = document.querySelector('.email'),
+    //         obj = document.querySelector('.obj'),
+    //         msg = document.querySelector('.msg');
+    //     console.log(email.value);
 
-        Email.send({
-            SecureToken: "4df572c8-8adb-49bc-b8d5-401127f6fc54",
-            To: 'souleymane06.ba@gmail.com',
-            From: email.value,
-            Subject: obj.value,
-            Body: name.value+": "+msg.value
-        }).then(
-            message => alert(message)
-        );
-    }
-    frm.addEventListener('submit',sendEmail);
+    //     Email.send({
+    //         SecureToken: "9c5b6e0f-489b-46b9-bce7-db5f32dd4b1c",
+    //         Password: "5D3584E9ADEAAE284C658A80B24DE0C316F8",
+    //         To: "souleymane06.ba@gmail.com",
+    //         From: email.value,
+    //         Subject: obj.value,
+    //         Body: name.value+": "+msg.value
+    //     }).then(
+    //         message => alert(message)
+    //     );
+    // }
+    // frm.addEventListener('submit',sendEmail);
 
 
 </script>
