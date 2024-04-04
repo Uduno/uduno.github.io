@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin : 0;
+    font-family: 'Bitter', serif;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+.background{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: rgb(255, 211, 211);
+}
+
+.section_container{
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+.section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    gap: 1rem;
+}
+
+.card_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 290px;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 5px;
+    --b: 5px; /* border thickness */
+    --c: #0000 25%,rgb(126, 126, 126) 0; /* define the color here */
+    padding: 10px;
+    background:
+      conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
+      conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+    background-size: 50px 50px; /* adjust border length here */
+    background-repeat: no-repeat;
+}
+
+/* .card_container::before{
+    content: "";
+    width: 50%;
+    height: 180%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.5s;
+    border: inherit;
+    rotate: 40deg;
+}
+
+
+.card_container::after{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background-color: white;
+} */
+
+.card_container img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgb(126, 126, 126);
+}
+
+.card_container > p:nth-child(2){
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card_container > p:nth-child(3){
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(126, 126, 126);
+}
+.card_container > p:nth-child(4){
+    font-size: 1rem;
+    color: rgb(126, 126, 126);
+}
+
+/* 2nd Section Compétences */
+.competence{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.card_container2{
+    aspect-ratio: 1/1;
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card_container2 > .card{
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.front_card, .back_card{
+    width: 100%;
+    height: 100%;
+    gap: 1rem;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    transition: transform 0.6s ease-in-out;
+}
+
+
+.topText{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.text{
+    font-size: 1rem;
+    color: rgb(126, 126, 126);
+}
+
+.card_container2:hover .front_card{
+    top: -100%;
+    transition: 0.5s ease-in-out;
+}
+.card_container2:hover .back_card{
+    top: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.back_card{
+    top: 100%;
+    text-align: center;
+}
+
+
+
+.card_container2:nth-child(1){
+    color: #FFA07A ;
+}
+.card_container2:nth-child(2){
+    color: #ADD8E6 ;
+}
+.card_container2:nth-child(3){
+    color: #7FFF7F ;
+}
+.card_container2 i{
+    font-size: 5rem;
+    z-index: 2;
+}
+
+.card_container2::before{
+    content: "";
+    width: 50%;
+    height: 180%;
+    position: absolute;
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.5s;
+    border: inherit;
+    rotate: 40deg;
+}
+
+.card_container2:nth-child(1)::before{
+    background-color: #FFA07A;
+}
+.card_container2:nth-child(2)::before{
+    background-color: #ADD8E6;
+}
+.card_container2:nth-child(3)::before{
+    background-color: #7FFF7F;
+}
+
+
+.card_container2::after{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .competence{
+        flex-direction: column;
+    }
+    
+}
