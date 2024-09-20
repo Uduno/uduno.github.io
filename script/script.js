@@ -1,33 +1,49 @@
-const card = document.querySelector(".card");
-const frontCard = document.querySelector(".front_card");
-const backCard = document.querySelector(".back_card");
-
-card.addEventListener("mouseenter", () => {
-    frontCard.style.marginTop = "-100%";
-    backCard.style.top = "0";
-    frontCard.style.transition = "0.5s ease-in-out";
-    backCard.style.transition = "0.5s ease-in-out";
-})
-
-card.addEventListener("mouseleave", () => {
-    frontCard.style.marginTop = "0";
-    backCard.style.top = "100%";
-})
-
-card.addEventListener("click", () => {
-    console.log("click");
-    if (backCard.style.top == "100%") {
-        backCard.style.top = "0";
-        frontCard.style.marginTop = "-100%";
-        frontCard.style.transition = "0.5s ease-in-out";
-        backCard.style.transition = "0.5s ease-in-out";
-    } else {
-        backCard.style.top = "100%";
-        backCard.style.transition = "0.5s ease-in-out";
-        frontCard.style.top = "0%";
-        frontCard.style.transition = "0.5s ease-in-out";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const box = document.querySelectorAll('.competence_box');
     
-})
+    box.forEach((item) => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('activeBox');
+        })
+    })
 
+    const container = document.querySelector('.projet_container');
+
+    function rotateLeft() {
+    const front = container.querySelector('.front');
+    const left = container.querySelector('.left');
+    const right = container.querySelector('.right');
+
+    front.classList.remove('front');
+    front.classList.add('right');
+    left.classList.remove('left');
+    left.classList.add('front');
+    right.classList.remove('right');
+    right.classList.add('left');
+    }
+
+    function rotateRight() {
+    const front = container.querySelector('.front');
+    const left = container.querySelector('.left');
+    const right = container.querySelector('.right');
+
+    front.classList.remove('front');
+    front.classList.add('left');
+    left.classList.remove('left');
+    left.classList.add('right');
+    right.classList.remove('right');
+    right.classList.add('front');
+    }
+
+    container.addEventListener('click', function(event) {
+    const clickedItem = event.target.closest('.projet');
+    if (clickedItem) {
+        if (clickedItem.classList.contains('left')) {
+        rotateLeft();
+        } else if (clickedItem.classList.contains('right')) {
+        rotateRight();
+        }
+    }
+    });
+})
 
