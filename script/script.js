@@ -1,49 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelectorAll('.competence_box');
-    
-    box.forEach((item) => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('activeBox');
-        })
-    })
+const buttons = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".tab-content");
 
-    const container = document.querySelector('.projet_container');
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const tabId = button.dataset.tab;
 
-    function rotateLeft() {
-    const front = container.querySelector('.front');
-    const left = container.querySelector('.left');
-    const right = container.querySelector('.right');
+        buttons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
 
-    front.classList.remove('front');
-    front.classList.add('right');
-    left.classList.remove('left');
-    left.classList.add('front');
-    right.classList.remove('right');
-    right.classList.add('left');
-    }
-
-    function rotateRight() {
-    const front = container.querySelector('.front');
-    const left = container.querySelector('.left');
-    const right = container.querySelector('.right');
-
-    front.classList.remove('front');
-    front.classList.add('left');
-    left.classList.remove('left');
-    left.classList.add('right');
-    right.classList.remove('right');
-    right.classList.add('front');
-    }
-
-    container.addEventListener('click', function(event) {
-    const clickedItem = event.target.closest('.projet');
-    if (clickedItem) {
-        if (clickedItem.classList.contains('left')) {
-        rotateLeft();
-        } else if (clickedItem.classList.contains('right')) {
-        rotateRight();
-        }
-    }
+        contents.forEach(content => {
+          content.classList.remove("active");
+          if (content.id === tabId) {
+            content.classList.add("active");
+          }
+        });
+      });
     });
-})
-

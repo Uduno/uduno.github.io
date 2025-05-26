@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Mon Site</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/" class="active">Expériences</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="hobbys.html">Hobbys</a></li>
+        </div>
+    </nav>
+
+    <div class="main">
+        <p>Expériences</p>
+        <div class="main_container">
+            <div class="left_container">
+                <button class="tab-button active" data-tab="tab1"><img src="assets/avatar.png" alt=""></button>
+                <button class="tab-button" data-tab="tab2"><img src="assets/avatar_serveur.png" alt=""></button>
+                <button class="tab-button" data-tab="tab3"><img src="assets/avatar_commi.png" alt=""></button>
+                <button class="tab-button" data-tab="tab4"><img src="assets/avatar_lidl.png" alt=""></button>
+            </div>
+            <div class="right_container">
+                <div class="tab-content active" id="tab1">
+                    <h2>Informatique</h2>
+                    <p>
+                        Malgré l’obtention d’une licence en informatique et de nombreuses candidatures pour des stages
+                        et alternances, je n’ai pas encore eu l’opportunité d’acquérir une expérience professionnelle
+                        dans ce domaine.
+                    </p>
+                    <p>
+                        CCela ne m’empêche pas de créer régulièrement de petits projets personnels pour progresser, ni
+                        d’avoir acquis de l’expérience dans d’autres secteurs.
+                    </p>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <h2>Serveur/Vendeur | Horeto <br> (Septembre 2024)</h2>
+                    <p>
+                        Un emploi court mais formateur, qui demandait réactivité, rigueur et sens du contact.
+                    </p>
+                    <ul>
+                        <li>Vente de produits aux clients</li>
+                        <li>Service des commandes</li>
+                        <li>Maintien fréquent de la propreté</li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <h2>Extra en cuisine | Butard Enesco <br> (Juin 2023)</h2>
+                    <p>
+                        Un poste exigeant sur le plan physique, avec des horaires très matinaux et des tâches simples
+                        mais répétitives qui demandaient concentration et rigueur.
+                    </p>
+                    <ul>
+                        <li>Contrôle des produits</li>
+                        <li>Assistance aux préparations en cuisine</li>
+                        <li>Maintien de la propreté du poste de travail</li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab4">
+                    <h2>Employé Polyvalent | Lidl <br> (Décembre 2020 – Août 2021)</h2>
+                    <p>
+                        Mon tout premier emploi, qui m’a permis de découvrir concrètement le monde du travail. Il m’a
+                        offert une expérience variée, entre autonomie, travail d’équipe et polyvalence au quotidien.
+                    </p>
+                    <ul>
+                        <li>Encaissement des clients</li>
+                        <li>Rangement et contrôle des produits</li>
+                        <li>Maintien de la propreté du magasin</li>
+                        <li>Assistance aux collègues sur leurs tâches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/script/script.js"></script>
+</body>
+
+</html>

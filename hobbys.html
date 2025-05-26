@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Mon Site</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navlist">
+            <li><a href="/">Home</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="hobbys.html" class="active">Hobbys</a></li>
+        </div>
+    </nav>
+
+    <div class="main">
+        <p>Hobbys</p>
+        <div class="main_container">
+            <div class="left_container">
+                <button class="tab-button active" data-tab="tab1"><img src="assets/hobby1.png" alt=""></button>
+                <button class="tab-button" data-tab="tab2"><img src="assets/hobby2.png" alt=""></button>
+                <button class="tab-button" data-tab="tab3"><img src="assets/hobby3.png" alt=""></button>
+            </div>
+            <div class="right_container">
+                <div class="tab-content active" id="tab1">
+                    <h2>Sport</h2>
+                    <p>
+                        J’ai toujours aimé le sport, et j’en ai pratiqué plusieurs au fil des années : football, basket,
+                        escalade, natation, musculation, etc.
+                    </p>
+                    <p>
+                        Mais c’est surtout le <strong>football</strong> qui a occupé une place importante, que j’ai
+                        pratiqué pendant plusieurs années. Mon club préféré est <strong>Manchester City</strong> et mon
+                        joueur favori est <strong>Kevin De Bruyne</strong>.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="tab2">
+                    <h2>Jeux Vidéo</h2>
+                    <p>
+                        Je suis passionné par les jeux vidéo, en particulier ceux qui proposent des <strong>mondes
+                            ouverts ou semi-ouverts</strong>.
+                    </p>
+                    <p>
+                        J’aime autant <strong>y jouer</strong> que <strong>les concevoir</strong> : imaginer des
+                        univers, créer des mécaniques, explorer le potentiel narratif. Je regarde souvent des vidéos sur
+                        le <strong>lore</strong>, les <strong>détails cachés</strong> ou les <strong>théories</strong>
+                        autour de mes jeux préférés.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="tab3">
+                    <h2>Lecture</h2>
+                    <p>
+                        J’aime lire, surtout les livres qui intègrent des <strong>illustrations</strong>. Même si ça
+                        peut sembler enfantin, j’aime qu’il y ait <strong>au moins une image toutes les trois
+                            pages</strong> pour mieux visualiser ce qui est raconté.
+                    </p>
+                    <p>
+                        Mon livre préféré est la bande dessinée <strong>Les Légendaires</strong>, pour son univers riche
+                        et ses personnages marquants.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="/script/script.js"></script>
+</body>
+
+</html>

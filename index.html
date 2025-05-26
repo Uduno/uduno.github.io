@@ -5,104 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Portoflio</title>
+    <title>Mon Site</title>
 </head>
 <body>
-    <div class="section_container">
-        <div class="section">
-            <h2>Bienvenue sur mon site</h2>
-            <div class="card_container">
-                <img src="assets/avatar.png" alt="avatar utilisateur">
-                <p>Ba Souleymane</p>
-                <p>Développeur Junior</p>
-                <p>Licence en informatique</p>
-            </div>
-            <img class="wave" src="assets/Wave1.png" alt="logo">
+    <nav class="navbar">
+        <div class="navlist">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="hobbys.html">Hobbys</a></li>
         </div>
+    </nav>
 
-        <div class="section">
-            <h2>Compétences</h2>
-            <div class="competence_container">
-               <div class="competence_box">
-                <div class="front_competence"> 
-                    <p class="topText">Design</p>
-                    <i class="fas fa-paint-brush"></i> <!-- Icône de pinceau -->
+    <div class="main">
+        <p>Bienvenue!</p>
+        <div class="main_container">
+            <div class="left_container">
+                <div class="img_container">
+                    <img src="assets/avatar.png" alt="avatar">
                 </div>
-                <div class="back_competence">
-                    <p class="topText">Figma</p>
-                    <p class="bottomText">Creation de croquis et de composants pour les interfaces web</p>
-                </div>
-               </div>
-
-              
-                <div class="competence_box">
-                 <div class="front_competence"> 
-                     <p class="topText">Web</p>
-                     <i class="fas fa-laptop-code"></i> <!-- Icône d'ordinateur portable -->
-                 </div>
-                 <div class="back_competence">
-                     <p class="topText">ReactJS</p>
-                     <p class="bottomText">Utiliser dans la plus part de mes mini-projets. Je m'essaie un peu à Vuejs aussi.</p>
-                 </div>
-                </div>
-             
-
-            
-                <div class="competence_box">
-                 <div class="front_competence"> 
-                     <p class="topText">Jeu</p>
-                     <i class="fas fa-gamepad"></i> <!-- Icône de manette -->
-                 </div>
-                 <div class="back_competence">
-                     <p class="topText">Python</p>
-                     <p class="bottomText">Creation de mini-jeux en Python avec la bibliotheque pygame</p>
-                 </div>
-                </div>
-            
             </div>
-
-            <img class="wave" src="assets/Wave2.png" >
-        </div>
-
-        <div class="section">
-            <h2>Projets</h2>
-            <div class="projet_container">
-                <div
-                 class="projet front"  >
-                    <div class="img_container">
-                        <img src="assets/projet1.png" >
-                    </div>
-                    <h3>Juice Shop</h3>
-                    <p>ReactJS</p>
-                    <a class="btn" href="https://mkgwjx.csb.app/">Voir</a>
-                </div
-                >
-                <div
-                 class="projet left" >
-                    <div class="img_container">
-                        <img src="assets/projet2.png" >
-                    </div>
-                    <h3>Cartes Pokeman</h3>
-                    <p>Vuejs</p>
-
-                    <a class="btn" href="https://6qwnq7-5173.csb.app/">Voir</a>
-                </div
-                >
-                <div
-                 class="projet right" >
-                    <div class="img_container">
-                        <img src="assets/projet3.png" >
-                    </div>
-                    <h3>Monstre de Zelda</h3>
-                    <p>ReactJS</p>
-
-                    <a class="btn" href="https://rpq4sj.csb.app/">Voir</a>
-                </div
-                >
+            <div class="right_container">
+                <div class="tab-content active">
+                    <p>Je me présente, <strong>Ba Souleymane</strong>. <br>  
+                    Je suis un <strong>développeur amateur</strong> qui veut se spécialiser dans le domaine du <strong>développement web et mobile</strong>. <br>  
+                    J’ai également pour ambition de transmettre mes connaissances en enseignant la <strong>programmation informatique</strong>, une fois suffisamment expérimenté.
+                    </p>
+                </div>
+                
             </div>
         </div>
-        
     </div>
+    
+    
     <script src="/script/script.js"></script>
 </body>
 </html>

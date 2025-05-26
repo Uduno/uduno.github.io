@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Mon Site</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="/" class="active">Projets</a></li>
+            <li><a href="hobbys.html">Hobbys</a></li>
+        </div>
+    </nav>
+
+    <div class="main">
+        <p>Projets</p>
+        <div class="main_container">
+            <div class="left_container">
+                <button class="tab-button active" data-tab="tab1"><img src="assets/projet1.png" alt="vaisseau"></button>
+                <button class="tab-button" data-tab="tab2"><img src="assets/projet2.png" alt="vache"></button>
+                <button class="tab-button" data-tab="tab3"><img src="assets/projet3.png" alt="pokeball"></button>
+                <button class="tab-button" data-tab="tab4"><img src="assets/projet4.png" alt="canette"></button>
+            </div>
+            <div class="right_container">
+                <div class="tab-content active" id="tab1">
+                    <h2>Space Invader | Python (Pygame)</h2>
+                    <p>
+                        Un petit projet réalisé avec Pygame pour explorer les bases de la programmation de jeux.
+                        L’univers visuel est simple, avec un pixel art conçu sur Krita.
+                    </p>
+                    <ul>
+                        <li>Déplacement du vaisseau</li>
+                        <li>Tir de projectiles pour éliminer les aliens</li>
+                        <li>Gestion du score</li>
+                        <li>Évitement des tirs ennemis</li>
+                        <li>Détection des collisions et Game Over</li>
+                    </ul>
+                    <p>
+                        <a href="LIEN_DU_PROJET" target="_blank">Voir le projet</a>
+                    </p>
+                </div>
+
+                <div class="tab-content" id="tab2">
+                    <h2>MazeDasher | Python (Pygame)</h2>
+                    <p>
+                        Un jeu de réflexion original réalisé avec Pygame, dans lequel le joueur doit atteindre une clé à
+                        travers un labyrinthe. Le style graphique en pixel art a été créé avec Krita. La mécanique
+                        centrale repose sur des mouvements en ligne droite jusqu’à un obstacle.
+                    </p>
+                    <ul>
+                        <li>Déplacement fluide dans une direction unique jusqu’à collision</li>
+                        <li>Choix de personnages (vache, lapin, poule)</li>
+                        <li>Collecte de clé pour terminer le niveau</li>
+                        <li>Recommencer si on reste bloqué</li>
+                        <li>Niveaux de difficulté croissants</li>
+                    </ul>
+                    <p>
+                        <a href="LIEN_DU_PROJET" target="_blank">Voir le projet</a>
+                    </p>
+                </div>
+
+                <div class="tab-content" id="tab3">
+                    <h2>Pokédex | Vue.js</h2>
+                    <p>
+                        Un projet frontend développé avec Vue.js qui permet de parcourir une base de données de
+                        centaines de Pokémon, avec un système de cartes illustrant leurs évolutions et caractéristiques.
+                    </p>
+                    <ul>
+                        <li>Affichage des Pokémon sous forme de cartes</li>
+                        <li>Tri par nom ou par type</li>
+                        <li>Recherche dynamique</li>
+                        <li>Affichage des évolutions liées</li>
+                    </ul>
+                    <p>
+                        <a href="LIEN_DU_PROJET" target="_blank">Voir le projet</a>
+                    </p>
+                </div>
+
+                <div class="tab-content" id="tab4">
+                    <h2>Vente de Jus de Fruits | React.js</h2>
+                    <p>
+                        Une simulation de site e-commerce développée avec React.js. L’utilisateur peut choisir entre
+                        plusieurs parfums de jus, visualiser son panier et consulter le prix total. L’interface a été
+                        conçue sur Figma.
+                    </p>
+                    <ul>
+                        <li>Sélection de jus de fruits avec plusieurs goûts</li>
+                        <li>Ajout au panier</li>
+                        <li>Affichage dynamique du prix total</li>
+                        <li>Design et packaging personnalisés</li>
+                        <li>Site non fonctionnel pour l’achat (simulation uniquement)</li>
+                    </ul>
+                    <p>
+                        <a href="LIEN_DU_PROJET" target="_blank">Voir le projet</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="/script/script.js"></script>
+</body>
+
+</html>
